@@ -45,7 +45,24 @@ class mclass:
         canvas.get_tk_widget().pack()
         canvas.draw()
 
+    def runTurtle(self):
 
+        input1 = self.box.get()
+
+        print(input1)
+        turtle.setup(width = 1400, height = 800)
+
+        my_start = (1, 1)
+
+        turtle.penup()
+        turtle.setx(my_start[0])
+        turtle.sety(my_start[1])
+        turtle.forward(1)
+        turtle.left(90)
+        turtle.pendown()
+
+        print turtle.heading()
+        print turtle.position()
 
 window= Tk()
 start= mclass (window)
