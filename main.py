@@ -49,23 +49,37 @@ class mclass:
 
         let =[]
         input1 = self.box.get()
+        turtle.setup(width = 1400, height = 800)
+        my_start = (1, 1)
+        turtle.setx(my_start[0])
+        turtle.sety(my_start[1])
+
+
+
+
         i=0
+
         for letter in input1:
             let.append(letter)
             i+=1
 
+        for x in let:
+
+            if x=='f'or x=='F':
+               turtle.pendown()
+               turtle.forward(1)
+               turtle.penup()
 
 
-        turtle.setup(width = 1400, height = 800)
+            elif x=='l' or x=='L':
+                turtle.pendown()
+                turtle.left(90)
+                turtle.penup()
 
-        my_start = (1, 1)
-
-        turtle.penup()
-        turtle.setx(my_start[0])
-        turtle.sety(my_start[1])
-        turtle.forward(1)
-        turtle.left(90)
-        turtle.pendown()
+            elif x=='r' or x=='R':
+                turtle.pendown()
+                turtle.right(90)
+                turtle.penup()
 
         print turtle.heading()
         print turtle.position()
