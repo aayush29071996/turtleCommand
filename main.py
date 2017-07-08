@@ -47,9 +47,15 @@ class mclass:
 
     def runTurtle(self):
 
+        let =[]
         input1 = self.box.get()
+        i=0
+        for letter in input1:
+            let.append(letter)
+            i+=1
 
-        print(input1)
+
+
         turtle.setup(width = 1400, height = 800)
 
         my_start = (1, 1)
