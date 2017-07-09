@@ -18,7 +18,9 @@ class mclass:
 
     def plot (self):
         self.button1 = Button(window, text="RUN TURTLE", command=self.runTurtle,height = 3, width = 20)
-        self.box = Entry(window)
+        Label(window, text="INSERT COMMAND",font =30).pack()
+
+        self.box = Entry(window, width = 70, font = 50)
 
         self.box.pack()
 
@@ -27,8 +29,8 @@ class mclass:
 
 
         # obstacles are set here
-        x=np.array ([ 2, 3, 4, 5, 6, 7, 8, 9, 10])
-        y= np.array ([ 2, 3, 4, 5, 6, 7, 8, 9, 11])
+        x=np.array ([ 3, 4, 5, 6, 7, 8, 9,2,1,10])
+        y= np.array ([3, 1, 6, 5, 2, 10, 3,9,10,10])
 
 
         fig = Figure(figsize=(20,20))
@@ -51,8 +53,7 @@ class mclass:
         my_start = (1, 1)
         turtle.setx(my_start[0])
         turtle.sety(my_start[1])
-
-
+        turtle.setheading(90)
 
 
         i=0
@@ -66,6 +67,10 @@ class mclass:
             if x=='f'or x=='F':
                turtle.pendown()
                turtle.forward(1)
+               if(turtle.position()==(3.00,3.00) or turtle.position()==(1.00,4.00) or turtle.position()==(6.00,5.00) or turtle.position()==(5.00,6.00) or turtle.position()==(2.00,7.00) or turtle.position()==(10.00,8.00) or turtle.position()==(3.00,9.00) or turtle.position()==(9.00,2.00) or turtle.position()==(10.00,1.00) or turtle.position()==(10.00,10.00)):
+                   turtle.backward(1)
+                   print "Obstacle on the way, Cant move forward!!, current position is ",turtle.position()
+
                turtle.penup()
 
 
@@ -80,7 +85,7 @@ class mclass:
                 turtle.penup()
 
             else:
-                print "Command could not be executed because ",x," is an invalid command"
+                print "Command could not be executed because ",x," is an invalid command!!"
 
 
         if(turtle.heading()==0.0):
