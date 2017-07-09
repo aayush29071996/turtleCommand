@@ -11,7 +11,7 @@ class mclass:
 
     def __init__(self,  window):
         self.window = window
-        self.button = Button (window, text="CLICK ME", command=self.plot,height = 50, width = 50)
+        self.button = Button (window, text="CLICK ME TO START", command=self.plot,height = 100, width = 100)
 
 
         self.button.pack()
@@ -28,16 +28,14 @@ class mclass:
 
         # obstacles are set here
         x=np.array ([ 2, 3, 4, 5, 6, 7, 8, 9, 10])
-        v= np.array ([ 2, 3, 4, 5, 6, 7, 8, 9, 11])
-        p= np.array ([0.23697,     2.31653,     6.22094,     6.68631,     6.73641 ,    8.6368,
-            8.32125,     8.31756 ,    10.20247  ,   10.41444   ,  10.11718  ,   10.12453])
+        y= np.array ([ 2, 3, 4, 5, 6, 7, 8, 9, 11])
+
 
         fig = Figure(figsize=(20,20))
         a = fig.add_subplot(111)
-        a.scatter(v,x,color='red')
-        a.plot(p, range(2 +max(x)),color='white')
+        a.scatter(y,x,color='red')
 
-        a.set_title ("TURTLE COMMAND", fontsize=20)
+        a.set_title ("OBSTACLE PLOT", fontsize=20)
         a.set_ylabel("Y", fontsize=14)
         a.set_xlabel("X", fontsize=14)
 
@@ -81,8 +79,20 @@ class mclass:
                 turtle.right(90)
                 turtle.penup()
 
-        print turtle.heading()
-        print turtle.position()
+            else:
+                print "Command could not be executed because ",x," is an invalid command"
+
+
+        if(turtle.heading()==0.0):
+            print "Turtle is headed in EAST direction"
+        elif(turtle.heading()==90.0):
+            print "Turtle is headed in NORTH direction"
+        elif (turtle.heading() == 180.0):
+            print "Turtle is headed in WEST direction"
+        else:
+            print "Turtle is headed in SOUTH direction"
+
+        print "The final position of the turtle is ",turtle.position(), " on XY plane"
 
 window= Tk()
 start= mclass (window)
