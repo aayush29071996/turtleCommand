@@ -78,11 +78,6 @@ class mclass:
                 turtle.forward(1)
 
 
-                #CHECKING OUT OF BOUND CONDITIONS
-                if(turtle.position()==(-1.00,-1.00) or turtle.position()==(-1.00,0.00) or turtle.position()==(-1.00,1.00) or turtle.position()==(-1.00,2.00) or turtle.position()==(-1.00,3.00) or turtle.position()==(-1.00,4.00) or turtle.position()==(-1.00,5.00) or turtle.position()==(-1.00,6.00) or turtle.position()==(-1.00,7.00) or turtle.position()==(-1.00,8.00) or turtle.position()==(-1.00,9.00) or turtle.position()==(-1.00,10.00) or turtle.position()==(0.00,-1.00) or turtle.position()==(1.00,-1.00) or turtle.position()==(2.00,-1.00) or turtle.position()==(3.00,-1.00) or turtle.position()==(4.00,-1.00) or turtle.position()==(5.00,-1.00) or turtle.position()==(6.00,-1.00) or turtle.position()==(7.00,-1.00) or turtle.position()==(8.00,-1.00) or turtle.position()==(9.00,-1.00) or turtle.position()==(10.00,-1.00)):
-                    turtle.backward(1)
-                    print "Turtle cant move out of bound"
-                    tkMessageBox.showinfo("Warning!!", "TURTLE CANNOT MOVE OUT OF BOUNDARY!!")
 
                 #CHECKING THE PREVAILING OBSTACLE CONDITIONS AND BACKTRACKING IF THERE IS OBSTACLE IN THE PATH
                 if (turtle.position() == (3.00, 3.00) or turtle.position() == (1.00, 6.00) or turtle.position() == (
